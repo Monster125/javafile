@@ -1,4 +1,3 @@
--- https://github.com/kookiatsuetrong/march
 -- drop user jeff;
 -- drop database web;
 create user jeff identified with mysql_native_password by 'bezos';
