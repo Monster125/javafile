@@ -1,0 +1,46 @@
+-- https://github.com/kookiatsuetrong/march
+-- drop user jeff;
+-- drop database web;
+create user jeff identified with mysql_native_password by 'bezos';
+create database web default charset 'utf8';
+grant all on web.* to jeff;
+
+use web;
+create table branch(
+  name    varchar(200),
+  area    float
+);
+insert into branch(name,area) values('Siam Square', 75.4);
+insert into branch(name,area) values('Bang Yai', 80.0);
+insert into branch(name,area) values('Rangsit', 62.8);
+
+create table member (
+  id    int auto_increment unique not null,
+  email varchar(80) unique not null,
+  password varchar(500) not null,
+  full_name varchar(80) not null
+);
+
+insert into member(email,full_name,password)
+  values('mark@fb.com', 'Mark Zuckerberg', sha2('mark123', 512));
+
+create table post(
+	id          int auto_increment unique not null,
+	created     timestamp default now(),
+	title       varchar(800) not null,
+	detail      varchar(4000),
+	photo       varchar(400),
+	owner       int
+);
+
+
+
+
+
+
+
+
+
+
+
+-- 

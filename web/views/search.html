@@ -1,0 +1,12 @@
+<% include header.html %>
+
+<div class='container'>
+	<% for (var i of result) { %>
+		<a href='/view/<%= i.id %>'>
+		<%= i.title %>
+		</a>
+		<br>
+	<% } %>
+</div>
+
+<% include footer.html %>
